@@ -46,11 +46,18 @@ namespace Demo_Voedingsdagboek.Services
             _klanten = new List<Klant>()
             {
                 new Klant() { KlantID=1, Geslacht=Geslacht.Man,Naam="Jan Jansen"},
-                new Klant() { KlantID=2,Geslacht=Geslacht.Vrouw,Naam="Joke De Klos"}
+                new Klant() { KlantID=2,Geslacht=Geslacht.Vrouw,Naam="Joke De Klos"},
+                new Klant() { KlantID=3,Geslacht=Geslacht.Man,Naam="Piet Pieters"},
+                new Klant() { KlantID=4,Geslacht=Geslacht.Man,Naam="Kris Kornelis"},
+                new Klant() { KlantID=5,Geslacht=Geslacht.Man,Naam="Jos De Klos"}
             };
             _klanten[0].Consumpties.Add(_consumpties[0]);
             _klanten[0].Consumpties.Add(_consumpties[1]);
             _klanten[1].Consumpties.Add(_consumpties[2]);
+
+            _consumpties[0].Klant = _klanten[0];
+            _consumpties[1].Klant = _klanten[0];
+            _consumpties[2].Klant = _klanten[1];
         }
 
         public IList<Klant> VoegKlantToe(Klant klant)
@@ -87,6 +94,11 @@ namespace Demo_Voedingsdagboek.Services
         public IList<Klant> GeefConsumptiesVoorKlant(Klant klant)
         {
             return (IList<Klant>)klant.Consumpties;
+        }
+
+        public IList<VoedingsConsumptie> GeefAlleConsumpties()
+        {
+            return _consumpties;
         }
     }
 }

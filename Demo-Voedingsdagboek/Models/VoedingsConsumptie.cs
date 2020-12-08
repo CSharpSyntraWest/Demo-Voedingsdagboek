@@ -10,7 +10,13 @@ namespace Demo_Voedingsdagboek.Models
         private DateTime _datum;
         private int _gewicht;
         private Product _product;
+        private Klant _klant;
 
+        public Klant Klant
+        {
+            get { return _klant; }
+            set { _klant = value; }
+        }
         public Product Product
         {
             get { return _product; }
@@ -27,6 +33,11 @@ namespace Demo_Voedingsdagboek.Models
         {
             get { return _datum; }
             set { _datum = value; }
+        }
+
+        public override string ToString()
+        {
+            return this.Datum.ToString("dd-MM") + " " + this.Klant.Naam + " " +  this.Product.Naam +  " " + Gewicht +  "g";
         }
     }
 }

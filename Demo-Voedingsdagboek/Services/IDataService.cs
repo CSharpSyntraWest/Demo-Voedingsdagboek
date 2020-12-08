@@ -12,5 +12,6 @@ namespace Demo_Voedingsdagboek.Services
         IList<VoedingsConsumptie> VoegConsumptieToeVoorKlant(int KlantIndex, VoedingsConsumptie consumptie);
         IList<Klant> VoegKlantToe(Klant klant);
         void WijzigKlant(Klant klant);
+        IList<VoedingsConsumptie> GeefAlleConsumpties();
     }
 }

@@ -25,8 +25,8 @@
             </Expander>
         </StackPanel>
         <StackPanel Grid.Column="1" Margin="10">
-            <GroupBox Margin="10" Header="Details van Klant">
-                <TextBlock Text="Hier komt de KlantDetailsView "/>
+            <GroupBox Margin="10" Header="Alle Voedingsconsumpties van alle klanten">
+                <views:ConsumptieView  DataContext="{Binding ConsumptieVM}"/>
             </GroupBox>
         </StackPanel>
     </Grid>
