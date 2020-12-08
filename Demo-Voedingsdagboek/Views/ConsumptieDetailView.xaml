@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Demo_Voedingsdagboek.Views.ConsumptieDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demo_Voedingsdagboek.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="6" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Datum:" HorizontalAlignment="Right"/>
+            <DatePicker Grid.Row="0" Grid.Column="2" SelectedDate="{Binding SelectedConsumptie.Datum}" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Gewicht:" HorizontalAlignment="Right"/>
+            <TextBox Grid.Row="2" Grid.Column="2"  Text="{Binding SelectedConsumptie.Gewicht}" />
+            <Label Grid.Row="4" Grid.Column="0" Content="Klant:" HorizontalAlignment="Right"/>
+            <ComboBox Grid.Row="4" Grid.Column="2"  Text="{Binding Klanten}"/>
+            <Label Grid.Row="6" Grid.Column="0" Content="Product:" HorizontalAlignment="Right"/>
+            <ComboBox Grid.Row="6" Grid.Column="2"  Text="{Binding Producten}" />
+    </Grid>
+</UserControl>

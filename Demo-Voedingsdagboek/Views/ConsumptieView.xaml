@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Demo_Voedingsdagboek.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <ComboBox ItemsSource="{Binding Consumpties}" SelectedItem="{Binding SelectedConsumptie}" />
-    </Grid>
+    <StackPanel>
+        <ComboBox Margin="10" ItemsSource="{Binding Consumpties}" SelectedItem="{Binding SelectedConsumptie}" />
+        <local:ConsumptieDetailView DataContext="{Binding}"/>
+    </StackPanel>
 </UserControl>
